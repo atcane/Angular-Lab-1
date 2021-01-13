@@ -38,7 +38,7 @@ this.todo.splice(removeTask, 1)
 
   addTask = function(task:string): void {
   let newTask = {
-    todo: task, completed: false,
+    task: "", completed: false,
   }
   this.todos.push(newTask);
   }
