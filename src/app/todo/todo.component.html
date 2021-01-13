@@ -1,24 +1,27 @@
 <body>
-<section class="todo">
-
-<h2>TODO List</h2>
- <h4> A place to store your to-dos </h4>
-
-    <!--Angular Div-->
-    <div>
-    <input type="text" name="filter" [(ngModel)]="filter" placeholder="Filter your to-dos"/> 
-    </div>
+    <section class="todo">
+    ​
+    <h2>TODO List</h2>
+     <h4> A place to store your to-dos </h4>
     
-    <ol>
-    <li *ngFor="let todo of getFilteredResults(); index as i">
-        <button class="complete" (click)="completeTask(todo)" *ngIf="todo.completed===false">Complete</button> 
-        <span [ngClass]="{ strikethrough: todo.completed }">{{todo.task}}</span> <button class="x" (click)="removeTask(task)"> X </button></li>
-    </ol>
+        <div>
+        <input class="filter" type="text" name="filter" [(ngModel)]="filter" placeholder="Filter your to-dos"/> 
+        </div>
+        
+        <ol>
+        <!-- <li *ngFor="let todo of getFilteredResults(); index as i"> -->
+            <li *ngFor="let todo of todos">
+            <button class="complete" (click)="completeTask(todo)" *ngIf="todo.completed===false">Complete</button> 
+            <span [ngClass]="{ strikethrough: todo.completed }">{{todo.task}}</span> <button class="x" (click)="removeTask(todo.task)"> X </button></li>
+        </ol>
+    ​
+        <div>
+            <input class="new-todo" type="text" placeholder="Add your to-do" [(ngModel)]="newTask">
+        </div>
 
-    <div>
-        <input type="text" placeholder="Add your to-do">
-        <button class="add" (click)="addTask('')">Add</button>
-    </div>
-
-</section>
-</body>
+        <div>
+            <button class="add" (click)="addTask()">Add</button>
+        </div>
+    ​
+    </section>
+    </body>
