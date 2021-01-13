@@ -43,11 +43,6 @@ this.todo.splice(removeTask, 1)
   this.todos.push(newTask);
   }
 
-//   function deleteSubmissionByName(array,name) {
-//     let submissionIndex = array.findIndex(submission => submission.name === name)
-//     array.splice(submissionIndex,1); 
-// }
-
 displayedTodos: Todo[] = [...this.todos];
 getFilteredResults(): Todo[] {
   return this.displayedTodos.filter((todo) => {
@@ -61,13 +56,6 @@ getFilteredResults(): Todo[] {
   });
 }
 
-// displayedTodos: Todo[] = [...this.todo];
-// getFilteredResults(): Todo [] {
-//   return this.displayedTodos.filter((todo) => {
-//     const taskLower
-//     return todo.task.toLowerCase().includes(this.getFilteredResults.toLowerCase());
-//   });
-// }
   constructor() { }
 
   ngOnInit(): void {

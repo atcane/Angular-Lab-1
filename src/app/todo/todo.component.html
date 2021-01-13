@@ -6,17 +6,18 @@
 
     <!--Angular Div-->
     <div>
-    <input type="text" name="filter" [(ngModel)]="filter" placeholder="Filter your to-dos"> 
+    <input type="text" name="filter" [(ngModel)]="filter" placeholder="Filter your to-dos"/> 
     </div>
     
     <ol>
     <li *ngFor="let todo of getFilteredResults(); index as i">
-        <button (click)="completeTask(todo)" *ngIf="todo.completed===false">Complete</button> <span [ngClass]="{ strikethrough: todo.completed }">{{todo.task}}</span> <button (click)="removeTask(task)"> X </button></li>
+        <button class="complete" (click)="completeTask(todo)" *ngIf="todo.completed===false">Complete</button> 
+        <span [ngClass]="{ strikethrough: todo.completed }">{{todo.task}}</span> <button class="x" (click)="removeTask(task)"> X </button></li>
     </ol>
 
     <div>
         <input type="text" placeholder="Add your to-do">
-        <button (click)="addTask()" >Add</button>
+        <button class="add" (click)="addTask(task)">Add</button>
     </div>
 
 </section>

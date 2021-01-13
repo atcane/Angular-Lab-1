@@ -8,3 +8,21 @@ section {
 .strikethrough {
     text-decoration: line-through;
 }
+
+.x {
+    display: block;
+    float: right;
+    border: none;
+}
+
+.complete {
+    color: #ff69b4;
+    border: 5px;
+    border-color:#ff69b4 ;
+}
+
+.add {
+    width: 75%;
+    font: white;
+    color: #ff1493;
+}
